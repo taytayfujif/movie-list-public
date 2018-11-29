@@ -1,12 +1,11 @@
 # Movie List
 
-[Intermediate] AWS, S3, Api-Gatway, Lambda, RDS, Serverless - Intro full stack project using amazon rds
+[Advanced] AWS, S3, Api-Gatway, Lambda, RDS, Serverless - Intro full stack project using amazon rds
 
 ## Objective
 You will be creating a full stack application. A client will be able to make HTTP requests to a PostgreSQL database through Amazon RDS.
 
 ## Prerequisites
-- Basic knowledge of HTTP requests using jQuery.
 - Basic understanding of API's.
 - Basic understanding of JSON.
 - Basic understanding of AWS Lambda
@@ -19,20 +18,33 @@ You will be creating a full stack application. A client will be able to make HTT
 
 ## Setup
 - Fork and Clone Repo
-- create serverless template ```serverless create --template aws-nodejs```
+- Create serverless template 
+- Create `package.json` file
 - npm install `pg`
 - npm install `pg-pool`
+
+
 #### File Structure 
 ```
 movie-list
 |
-+-- client
++-- public
 |    |
+|    +-- edit
+|    |   |
+|    |   +-- edit.js
+|    |   +-- edit.html
+|    |   +-- edit.css
+|    +-- post
+|    |   |
+|    |   +-- post.js
+|    |   +-- post.html
+|    |   +-- post.css
 |    +-- index.html
-|    +-- styles.css
-+-- lambdas
+|    +-- index.js
+|    +-- index.css
++-- routes
 |    |
-|    +-- config.json
 |    +-- get.js
 |    +-- post.js
 |    +-- update.js
@@ -41,36 +53,21 @@ movie-list
 |    +-- delete.json
 |    +-- post.json
 |    +-- update.json
++-- config.json
 +-- node_modules
 +-- .gitignore
-+-- handler.js
 +-- package-lock.json
 +-- package.json
 +-- serverless.yml
 ```
-#### Setup PosgreSQL Instance in AWS
-- create a PostgreSQL database instance in AWS. Run the following: <br>
-```aws rds create-db-instance --db-instance-identifier identifier --db-name dbname --allocated-storage 20 --db-instance-class db.t2.micro --engine postgres --master-username username --master-user-password password --port 5432 --availability-zone us-west-2a```<br>
- *NOTE: Please use your name as the identifier <br>
- *NOTE: Please add '_YOUR NAME' to the end of dbname. Ex. `movies_tyler`<br>
- *NOTE: Database instance will take 5 mins or more to be created
+#### Setup AWS RDS PosgreSQL Instance in your PSQL Shell
 
-- run `aws rds describe-db-instances` to check if your database has been created
-
-- run `psql --host instanceendpoint --port 5432 --username username --dbname dbname` to connect to your database instance 
+1. run `psql --host instanceendpoint --port 5432 --username username --dbname dbname` to connect to jrDevLeague database instance(You should already have this information)
 
 - When connected to your database, create a table with the following columns:
-  - id, title , year, genre
+  - movie_id
+  - movie_title
+  - movie_year_released
+  - movie_genre
   
- ## Steps
- 1. Inside your `lambdas` directory, you will create 4 lambda function routes (GET, POST, UPDATE, DELETE)
-    - Add the following code snippet in your POST function in your `serverless.yml`:
-    ```integration: lambda
-         request:
-            passThrough: WHEN_NO_TEMPLATES
-            template:
-              application/x-www-form-urlencoded: '{ "body" : "$input.body" }'
-    ```
-    *HINT #1: use the data in your `test-data` directory to run the POST, UPDATE, and DELETE routes<br>
-    *HINT #2: make sure you test every lambda function LOCALLY!
-  2. Create client side
+ #### Client Side Setup

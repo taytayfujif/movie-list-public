@@ -60,9 +60,7 @@ movie-list
 +-- package.json
 +-- serverless.yml
 ```
-#### Setup AWS RDS PosgreSQL Instance in your PSQL Shell
-
-1. run `psql --host instanceendpoint --port 5432 --username username --dbname dbname` to connect to jrDevLeague database instance(You should already have this information)
+#### Connect to remote AWS RDS PostgreSQL 
 
 - When connected to your database, create a table with the following columns:
   - movie_id
@@ -70,4 +68,4 @@ movie-list
   - movie_year_released
   - movie_genre
   
- #### Client Side Setup
+

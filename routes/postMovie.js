@@ -15,7 +15,7 @@ module.exports.post = (event, context, callback) => {
     console.log('event.body', event.body);
   let { title, year, genre} = event.body
 
-  const postMovie = "INSERT INTO " + table + " Values(default, $1, $2, $3)"
+  const postMovie = `INSERT INTO ${table} VAlUES(default, $1, $2, $3)`
 
   pool.connect()
       .then((client) => {

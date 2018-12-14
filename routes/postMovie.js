@@ -29,7 +29,8 @@ module.exports.post = (event, context, callback) => {
                   "Access-Control-Allow-Origin": "*",
                   "Access-Control-Allow-Credentials": true
               },
-              body: JSON.stringify(res)
+              body: JSON.stringify(res),
+              message: "succcessfully posted movie"
           }
           callback(null, response);
           console.log('Your connection will now be terminated')

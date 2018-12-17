@@ -75,6 +75,15 @@ functions:
           cors: true
           integration: lambda
   
+  searchMovie:
+    handler: routes/searchMovie.get
+    events:
+     - http: 
+          path: get
+          method: get
+          cors: true
+          integration: lambda
+  
   putMovie:
     handler: routes/putMovie.put
     events:

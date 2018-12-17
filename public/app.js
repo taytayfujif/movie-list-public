@@ -50,7 +50,7 @@ deleteSubmit.addEventListener('click',(event)=>{
   event.preventDefault(); 
    
    axios 
-   .delete('https://fn01dfbm9h.execute-api.us-west-2.amazonaws.com/dev/delete', {
+   .delete('https://0mikmh74ag.execute-api.us-west-2.amazonaws.com/dev/delete', {
        data: {
         id:deleteId.value
        }

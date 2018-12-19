@@ -14,7 +14,7 @@ const pool = new Pool({
 
 module.exports.get = (event, context, callback) => {
 
-  let {title} = event.body
+  let {title} = event.bodynp
   const searchMovies = `SELECT * FROM ${table} WHERE title = $1;`;
 
   pool.connect()

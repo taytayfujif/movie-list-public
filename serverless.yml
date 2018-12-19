@@ -79,7 +79,7 @@ functions:
     handler: routes/searchMovie.get
     events:
      - http: 
-          path: get
+          path: search
           method: get
           cors: true
           integration: lambda

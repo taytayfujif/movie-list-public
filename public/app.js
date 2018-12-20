@@ -14,7 +14,7 @@ const postMovie= document.querySelector('#postButton')
 const updateMovie = document.querySelector('#updateButton')
 const deleteMovie = document.querySelector('#deleteButton')
 const getTitle = document.querySelector('#get-title')
-const getSubmit = document.querySelector('#get-Submit')
+const getSubmit = document.querySelector('#get-submit')
 
 
 postMovie.addEventListener('click', (event) => {
@@ -97,14 +97,38 @@ getSubmit.addEventListener('click',(event)=>{
   event.preventDefault(); 
    
    axios 
-   .get('https://0mikmh74ag.execute-api.us-west-2.amazonaws.com/dev/search', {
+   .post('https://0mikmh74ag.execute-api.us-west-2.amazonaws.com/dev/search', {
        title: getTitle.value
    })
+
  .then(response =>{
    console.log('response', response);
  })
  .catch(e => {
    console.log('error', e)
  })
+})
+
+
+    .then(response =>{
+      let emptyCard = ``
+      document.querySelector('#result').innerHTML = emptyCard
+      response.data.message.rows.map(x => {
+        let cardTemplate = `
+          <div class = 'card'>
+            <p> ${x.id} </p>
+            <p> ${x.title} </p>
+            <p> ${x.year} </p>
+            <p> ${x.genre} </p>
+          </div>
+          `
+        let newCard = document.createElement('div');
+        newCard.innerHTML = cardTemplate;
+        document.querySelector('#result').appendChild(newCard);
+      })
+    })
+    .catch(e => {
+      console.log('error', e)
+    })
 })
 

@@ -8,30 +8,41 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="box">
-         <form id="post-form ">
-             <input id="post-title" type="text" placeholder=" Movie title">
-             <input id="post-year" type="text" placeholder=" Movie year">
-             <input id="post-genre" type="text" placeholder=" Movie genre">
-             <input id="post-submit" type="submit" placeholder=" submit">
-         </form>
-         <form id= "put-form">
-             <input id="put-title" type= "text" placeholder=" Update Movie title">
-             <input id= "put-year" type= "text" placeholder= "Update Movie year">
-             <input id = "put-genre" type= "text" placeholder="Update Movie genre">
-             <input id ="put-id" type= "text" placeholder="Existing id">
-             <input id = "put-submit" type= "submit" placeholder="Submit">
-         </form>
-         <form id= "delete-form">
-             <input id= "delete-id" type ="text" placeholder="Existing id">
-             <input id="delete-submit" type ="submit" placeholder= "submit">        
-             </form>
+    <div id= "titleBox">
+        Movie List
+    </div>
+    <div id= "navBar">
+        <button id="postButton" type="button">Post Movie</button>
+        <button id="updateButton" type="button">Update Movie</button>
+        <button id="deleteButton" type="button">Delete Movie</button>
+        <button id="showAll" type='button'>Show All Movies</button>
         <form id= "get-form">
             <input id= get-title type= "text" placeholder="Movie Title">
             <input id= get-submit type= "submit" placeholder="search">
         </form>
-      
     </div>
+
+    <div id="box">
+        <div id="instructions">List your Movies</div>
+        <form id="post-form">
+            <input id="post-title" type="text" placeholder=" Movie title">
+            <input id="post-year" type="text" placeholder=" Movie year">
+            <input id="post-genre" type="text" placeholder=" Movie genre">
+            <input id="post-submit" type="submit" placeholder=" submit">
+        </form>
+        <form id= "put-form">
+            <input id="put-title" type= "text" placeholder=" Update Movie title">
+            <input id= "put-year" type= "text" placeholder= "Update Movie year">
+            <input id = "put-genre" type= "text" placeholder="Update Movie genre">
+            <input id ="put-id" type= "text" placeholder="Existing id">
+            <input id = "put-submit" type= "submit" placeholder="Submit">
+        </form>
+        <form id= "delete-form">
+            <input id= "delete-id" type ="text" placeholder="Existing id">
+            <input id="delete-submit" type ="submit" placeholder= "submit">        
+        </form>
+    </div>
+
     <div id=result>
 
     </div>

@@ -9,9 +9,13 @@ const putId = document.querySelector('#put-id')
 const putSubmit = document.querySelector('#put-submit')
 const deleteId = document.querySelector('#delete-id')
 const deleteSubmit = document.querySelector('#delete-submit')
+
 const postMovie= document.querySelector('#postButton')
 const updateMovie = document.querySelector('#updateButton')
 const deleteMovie = document.querySelector('#deleteButton')
+const getTitle = document.querySelector('#get-title')
+const getSubmit = document.querySelector('#get-Submit')
+
 
 postMovie.addEventListener('click', (event) => {
   document.getElementById('post-form').style.display = 'flex'
@@ -78,6 +82,23 @@ deleteSubmit.addEventListener('click',(event)=>{
        data: {
         id:deleteId.value
        }
+   })
+ .then(response =>{
+   console.log('response', response);
+ })
+ .catch(e => {
+   console.log('error', e)
+ })
+})
+
+
+
+getSubmit.addEventListener('click',(event)=>{
+  event.preventDefault(); 
+   
+   axios 
+   .get('https://0mikmh74ag.execute-api.us-west-2.amazonaws.com/dev/search', {
+       title: getTitle.value
    })
  .then(response =>{
    console.log('response', response);

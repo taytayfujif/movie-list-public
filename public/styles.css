@@ -1,0 +1,41 @@
+#box{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#post-form{
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: beige
+}
+
+#delete-form{
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: blueviolet
+
+}
+
+#put-form{
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: red
+}
+
+#navBar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around
+}
+#titleBox{
+    display: flex;
+    justify-content: space-around
+}
+#instructions{
+    display:flex;
+    justify-content: space-around
+}

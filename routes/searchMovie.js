@@ -12,15 +12,15 @@ const pool = new Pool({
   idleTimeoutMillis: 1000
 });
 
-module.exports.get = (event, context, callback) => {
+module.exports.search = (event, context, callback) => {
 
-  let {title} = event.bodynp
-  const searchMovies = `SELECT * FROM ${table} WHERE title = $1;`;
+  let {title} = event.body
+  const searchMovie = `SELECT * FROM ${table} WHERE title = $1;`;
 
   pool.connect()
     .then(client => {
       client.release();
-      return client.query(searchMovies);
+      return client.query(searchMovie, [title]);
     })
     .then(data => {
       const response = {

@@ -39,3 +39,7 @@
     display:flex;
     justify-content: space-around
 }
+#result{
+    display: none;
+    justify-content: space-around
+}

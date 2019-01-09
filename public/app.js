@@ -9,7 +9,7 @@ const putId = document.querySelector('#put-id')
 const putSubmit = document.querySelector('#put-submit')
 const deleteId = document.querySelector('#delete-id')
 const deleteSubmit = document.querySelector('#delete-submit')
-
+const showAll = document.querySelector('#showAll')
 const postMovie= document.querySelector('#postButton')
 const updateMovie = document.querySelector('#updateButton')
 const deleteMovie = document.querySelector('#deleteButton')
@@ -21,6 +21,7 @@ postMovie.addEventListener('click', (event) => {
   document.getElementById('post-form').style.display = 'flex'
   document.getElementById('put-form').style.display= 'none'
   document.getElementById('delete-form').style.display ='none'
+  document.getElementById('result').style.display= 'none'
   document.getElementById('instructions').innerHTML ='Enter new movie'
 })
 
@@ -28,6 +29,7 @@ updateMovie.addEventListener('click',(event) => {
   document.getElementById('put-form').style.display= 'flex'
   document.getElementById('post-form').style.display = 'none'
   document.getElementById('delete-form').style.display ='none'
+  document.getElementById('result').style.display= 'none'
   document.getElementById('instructions').innerHTML ='update by entering info.'
 })
 
@@ -35,8 +37,10 @@ deleteMovie.addEventListener('click', (event) => {
   document.getElementById('delete-form').style.display ='flex'
   document.getElementById('post-form').style.display = 'none'
   document.getElementById('put-form').style.display= 'none'
+  document.getElementById('result').style.display= 'none'
   document.getElementById('instructions').innerHTML='delete movie by id'
 })
+
 
 
 postSubmit.addEventListener('click',(event) => {
@@ -103,29 +107,68 @@ getSubmit.addEventListener('click',(event)=>{
 
  .then(response =>{
    console.log('response', response);
- })
- .catch(e => {
-   console.log('error', e)
- })
-    .then(response =>{
-      let emptyCard = ``
-      document.querySelector('#result').innerHTML = emptyCard
-      response.data.message.rows.map(x => {
-        let cardTemplate = `
-          <div class = 'card'>
-            <p> ${x.id} </p>
-            <p> ${x.title} </p>
-            <p> ${x.year} </p>
-            <p> ${x.genre} </p>
-          </div>
-          `
-        let newCard = document.createElement('div');
-        newCard.innerHTML = cardTemplate;
-        document.querySelector('#result').appendChild(newCard);
-      })
+   let emptyCard = ``
+    document.querySelector('#result').innerHTML = emptyCard
+    response.data.message.rows.map(x => {
+      console.log(
+        x.id,
+        x.title,
+        x.year,
+        x.genre
+      )
+      let cardTemplate = `
+        <div class = 'card'>
+          <p> Id: ${x.id} </p>
+          <p> Title: ${x.title} </p>
+          <p> Year: ${x.year} </p>
+          <p> Genre: ${x.genre} </p>
+        </div>
+        `
+      let newCard = document.createElement('div');
+      newCard.innerHTML = cardTemplate;
+      document.querySelector('#result').appendChild(newCard);
+      document.getElementById('result').style.display= 'flex';
+
     })
-    .catch(e => {
-      console.log('error', e)
-    })
+  })
+  .catch(e => {
+    console.log('error', e)
+  })
 })
 
+showAll.addEventListener('click',(event)=>{
+  event.preventDefault(); 
+   
+   axios 
+   .get('https://0mikmh74ag.execute-api.us-west-2.amazonaws.com/dev/get', {
+      
+   })
+
+   .then(response =>{
+    let emptyCard = ``
+    document.querySelector('#result').innerHTML = emptyCard
+    response.data.message.rows.map(x => {
+      console.log(
+        x.id,
+        x.title,
+        x.year,
+        x.genre
+      )
+      let cardTemplate = `
+        <div class = 'card'>
+          <p> Id: ${x.id} </p>
+          <p> Title: ${x.title} </p>
+          <p> Year: ${x.year} </p>
+          <p> Genre: ${x.genre} </p>
+        </div>
+        `
+      let newCard = document.createElement('div');
+      newCard.innerHTML = cardTemplate;
+      document.querySelector('#result').appendChild(newCard);
+      document.getElementById('result').style.display= 'flex';
+    })
+  })
+  .catch(e => {
+    console.log('error', e)
+  })
+})

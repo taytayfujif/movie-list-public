@@ -107,9 +107,6 @@ getSubmit.addEventListener('click',(event)=>{
  .catch(e => {
    console.log('error', e)
  })
-})
-
-
     .then(response =>{
       let emptyCard = ``
       document.querySelector('#result').innerHTML = emptyCard

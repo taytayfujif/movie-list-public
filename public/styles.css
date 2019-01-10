@@ -1,29 +1,58 @@
-#box{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+body{
+    font-family: 'Ubuntu Condensed', sans-serif;
+    font-size: 30px;
 }
 
+button{
+    text-decoration: none;
+    border: none; 
+}
+
+form{
+    display:flex;
+}
 #post-form{
     display: none;
-    flex-direction: column;
-    justify-content: space-around;
-    background-color: beige
 }
-
 #delete-form{
     display: none;
-    flex-direction: column;
-    justify-content: space-around;
-    background-color: blueviolet
-
 }
-
 #put-form{
     display: none;
-    flex-direction: column;
-    justify-content: space-around;
-    background-color: red
+}
+input{
+    flex-grow: 1;
+}
+
+#get-submit{
+    text-decoration: none;
+    border: none;
+    height:45px;
+    width:60px;
+}
+
+#post-submit{
+    flex-direction: row;
+    justify-content: center;
+    text-decoration: none;
+    border: none;
+    height:45px;
+    width:60px;
+}
+
+#delete-submit{
+    text-decoration: none;
+    border: none;
+    height:45px;
+    width:60px;
+}
+
+#put-submit{
+    text-decoration: none;
+    border: none;
+    height:45px;
+    width:60px;
+
 }
 
 #navBar{
@@ -42,4 +71,8 @@
 #result{
     display: none;
     justify-content: space-around
+}
+
+.card{
+    background-color: #4fcaff;
 }

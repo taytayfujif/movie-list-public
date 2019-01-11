@@ -30,7 +30,7 @@ updateMovie.addEventListener('click',(event) => {
   document.getElementById('post-form').style.display = 'none'
   document.getElementById('delete-form').style.display ='none'
   document.getElementById('result').style.display= 'none'
-  document.getElementById('instructions').innerHTML ='update by entering info.'
+  document.getElementById('instructions').innerHTML ='Update by entering info.'
 })
 
 deleteMovie.addEventListener('click', (event) => {
@@ -38,7 +38,7 @@ deleteMovie.addEventListener('click', (event) => {
   document.getElementById('post-form').style.display = 'none'
   document.getElementById('put-form').style.display= 'none'
   document.getElementById('result').style.display= 'none'
-  document.getElementById('instructions').innerHTML='delete movie by id'
+  document.getElementById('instructions').innerHTML='Delete movie by ID'
 })
 
 
@@ -118,7 +118,7 @@ getSubmit.addEventListener('click',(event)=>{
       )
       let cardTemplate = `
         <div class = 'card'>
-          <p> Id: ${x.id} </p>
+          <p> ID: ${x.id} </p>
           <p> Title: ${x.title} </p>
           <p> Year: ${x.year} </p>
           <p> Genre: ${x.genre} </p>
@@ -156,7 +156,7 @@ showAll.addEventListener('click',(event)=>{
       )
       let cardTemplate = `
         <div class = 'card'>
-          <p> Id: ${x.id} </p>
+          <p> ID: ${x.id} </p>
           <p> Title: ${x.title} </p>
           <p> Year: ${x.year} </p>
           <p> Genre: ${x.genre} </p>

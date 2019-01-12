@@ -1,11 +1,14 @@
 body{
     font-family: 'Ubuntu Condensed', sans-serif;
     font-size: 30px;
+    padding: 10px;
+    color: #3b0e51;
+    background-color: #775e84;
 }
 
 button{
     text-decoration: none;
-    border: none; 
+    border: none;
 }
 
 form{
@@ -58,21 +61,28 @@ input{
 #navBar{
     display: flex;
     flex-direction: row;
-    justify-content: space-around
+    justify-content: space-around;
 }
 #titleBox{
     display: flex;
-    justify-content: space-around
+    justify-content: space-around;
 }
 #instructions{
     display:flex;
-    justify-content: space-around
+    justify-content: space-around;
 }
 #result{
     display: none;
-    justify-content: space-around
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 30px;
+    align-content: center;
 }
 
 .card{
-    background-color: #4fcaff;
+    margin-bottom: 10px;
+    flex-grow: 1;
+    background-color: #702896;
+    padding: 15px;
+    border: 2px solid grey;
 }

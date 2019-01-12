@@ -21,7 +21,6 @@ postMovie.addEventListener('click', (event) => {
   document.getElementById('post-form').style.display = 'flex'
   document.getElementById('put-form').style.display= 'none'
   document.getElementById('delete-form').style.display ='none'
-  document.getElementById('result').style.display= 'none'
   document.getElementById('instructions').innerHTML ='Enter new movie'
 })
 
@@ -29,7 +28,6 @@ updateMovie.addEventListener('click',(event) => {
   document.getElementById('put-form').style.display= 'flex'
   document.getElementById('post-form').style.display = 'none'
   document.getElementById('delete-form').style.display ='none'
-  document.getElementById('result').style.display= 'none'
   document.getElementById('instructions').innerHTML ='Update by entering info.'
 })
 
@@ -37,7 +35,6 @@ deleteMovie.addEventListener('click', (event) => {
   document.getElementById('delete-form').style.display ='flex'
   document.getElementById('post-form').style.display = 'none'
   document.getElementById('put-form').style.display= 'none'
-  document.getElementById('result').style.display= 'none'
   document.getElementById('instructions').innerHTML='Delete movie by ID'
 })
 

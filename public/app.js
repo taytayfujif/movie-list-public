@@ -115,10 +115,10 @@ getSubmit.addEventListener('click',(event)=>{
       )
       let cardTemplate = `
         <div class = 'card'>
-          <p> ID: ${x.id} </p>
           <p> Title: ${x.title} </p>
           <p> Year: ${x.year} </p>
           <p> Genre: ${x.genre} </p>
+          <p> ID: ${x.id} </p>
         </div>
         `
       let newCard = document.createElement('div');
@@ -153,10 +153,10 @@ showAll.addEventListener('click',(event)=>{
       )
       let cardTemplate = `
         <div class = 'card'>
-          <p> ID: ${x.id} </p>
           <p> Title: ${x.title} </p>
           <p> Year: ${x.year} </p>
           <p> Genre: ${x.genre} </p>
+          <p> ID: ${x.id} </p>
         </div>
         `
       let newCard = document.createElement('div');

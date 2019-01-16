@@ -1,11 +1,12 @@
 body{
     font-family: 'Ubuntu Condensed', sans-serif;
     font-size: 30px;
+    padding: 10px;
 }
 
 button{
     text-decoration: none;
-    border: none; 
+    border: none;
 }
 
 form{
@@ -29,6 +30,7 @@ input{
     border: none;
     height:45px;
     width:60px;
+    background-color: #b8d9fc;
 }
 
 #post-submit{
@@ -38,6 +40,7 @@ input{
     border: none;
     height:45px;
     width:60px;
+    background-color: #b8d9fc;
 }
 
 #delete-submit{
@@ -45,6 +48,7 @@ input{
     border: none;
     height:45px;
     width:60px;
+    background-color: #b8d9fc;
 }
 
 #put-submit{
@@ -52,27 +56,45 @@ input{
     border: none;
     height:45px;
     width:60px;
-
+    background-color: #b8d9fc;
 }
 
 #navBar{
     display: flex;
     flex-direction: row;
-    justify-content: space-around
+    width: 100%;
 }
+
+.navbutton{
+    flex-grow: 1;
+    background-color: #b8d9fc;
+}
+
 #titleBox{
     display: flex;
-    justify-content: space-around
+    justify-content: space-around;
 }
 #instructions{
     display:flex;
-    justify-content: space-around
+    justify-content: space-around;
 }
 #result{
     display: none;
-    justify-content: space-around
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 30px;
+    align-content: center;
+    
 }
 
 .card{
-    background-color: #4fcaff;
+    margin-bottom: 10px;
+    flex-grow: 1;
+    background-color: #b8d9fc;
+    padding: 15px;
+    border: 2px solid black;
+}
+
+#get-form{
+    flex-grow: 3;
 }
